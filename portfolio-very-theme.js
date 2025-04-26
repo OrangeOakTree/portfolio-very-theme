@@ -5,7 +5,7 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
-
+import './portfolio-banner.js';
 /**
  * `portfolio-very-theme`
  * 
@@ -20,26 +20,14 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
 
   constructor() {
     super();
-    this.title = "";
-    this.t = this.t || {};
-    this.t = {
-      ...this.t,
-      title: "Title",
-    };
-    this.registerLocalization({
-      context: this,
-      localesPath:
-        new URL("./locales/portfolio-very-theme.ar.json", import.meta.url).href +
-        "/../",
-      locales: ["ar", "es", "hi", "zh"],
-    });
+    this.pages = [];
   }
 
   // Lit reactive properties
   static get properties() {
     return {
       ...super.properties,
-      title: { type: String },
+      pages: { type: Array }
     };
   }
 
@@ -49,36 +37,47 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     css`
       :host {
         display: block;
-        color: var(--ddd-theme-primary);
-        background-color: var(--ddd-theme-accent);
-        font-family: var(--ddd-font-navigation);
+        height: 100vh;
       }
-      .wrapper {
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4);
-      }
-      h3 span {
-        font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
+      portfolio-banner {
+        
       }
     `];
   }
+  
 
   // Lit render the HTML
   render() {
     return html`
-<div class="wrapper">
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
-  <slot></slot>
-</div>`;
+    <div class="wrapper">
+      <portfolio-banner>
+      <ul>
+        ${this.pages.map((page, index) => html`<a href="#${page.number}" @click="${this.linkChange}" data-index="${index}">${page.title}</a>`)}
+      </ul>
+      </portfolio-banner>
+      <div class="pagewrapper" @page-added="${this.addpage}">
+        <slot></slot>
+      </div>
+    </div>`;
   }
 
-  /**
-   * haxProperties integration via file reference
-   */
-  static get haxProperties() {
-    return new URL(`./lib/${this.tag}.haxProperties.json`, import.meta.url)
-      .href;
+  linkchange(e) {
+    let number = parseInt(e.target.getAttribute('data-index'));
+    if (number >= 0) {
+      this.pages[number].element.scrollIntoView();
+    }
   }
+
+  addpage(e) {
+    const element = e.detail.value
+    const page = {
+      number: element.pagenumber,
+      title: element.title,
+      element: element,
+    }
+    this.pages = [...this.pages, page];
+  }
+  
 }
 
 globalThis.customElements.define(PortfolioVeryTheme.tag, PortfolioVeryTheme);
