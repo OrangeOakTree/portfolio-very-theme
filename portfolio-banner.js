@@ -47,11 +47,6 @@ export class PortfolioBanner extends DDD  {
         position: absolute;
         font-size: 4px;
       }
-      @media (max-width: 600px) {
-        #wrapper {
-          font-size: 12px;
-        }
-      }
     `];
   }
 

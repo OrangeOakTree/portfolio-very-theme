@@ -6,60 +6,54 @@
         margin: 0;
       }
     </style>
-  <portfolio-very-theme bannertitle="Andrew's Portfolio">
+  <portfolio-very-theme bannertitle="Andrew Grabowy">
     <portfolio-screen title="About Me" pagenumber="1" data-accent="2" data-primary="2">
       <img id="headshot" src="https://media.licdn.com/dms/image/v2/D4E03AQH77dNDn1fc_g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726683854659?e=1752105600&v=beta&t=Jr_DZXLbNpNYQ7s2bD9yPiXTzkMVDB6j8vfU-xhTI20"></img>
       <style>
         #headshot {
-          width: 192px;
-          height: 192px;
+          width: 250px;
+          height: 250px;
           border-radius: 50%;
         }
+
       </style>
-      <p>Hello there! I am Andrew! I would say a bunch of stuff here but honestly im to lazy to put stuff here. So im just writing this sentence to give this some text. I hope your having fun reading this.</p>
-    </img>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
     </portfolio-screen>
-    <portfolio-screen title="FAQ" pagenumber="2" data-accent="4" data-primary="10">
+    <portfolio-screen title="FAQ" pagenumber="2" data-accent="4" data-primary="17">
       <h3>Certifications?</h3>
-      <p>I am currently working on getting a Security+ Certification.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
       <h3>Any awards?</h3>
-      <p>Yes! I am an Eagle Scout, and Penn State President Walker Award Recipient!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
     </portfolio-screen>
     <portfolio-screen title="Penn State IST" pagenumber="3" data-accent="9" data-primary="1">
-      <h3> As a Penn State IST Student I highly recommend checking out our NSA certified programs at:</h3>
-      <a href="https://ist.psu.edu/">https://ist.psu.edu/</a>
+      <accent-card accent-background="" horizontal=TRUE link="https://ist.psu.edu/" >
+        <h5 slot="heading">Penn State College of IST</h5>
+        <div slot="content">The best Academic College at Penn State</div>
+        <div slot="footer">Learn more...</div>
+      </accent-card>
     </portfolio-screen>
-    <portfolio-screen title="HaxTheWeb" pagenumber="4" data-accent="15" data-primary="26">
+    <portfolio-screen title="HaxTheWeb" pagenumber="4" data-accent="7" data-primary="11">
       <p> You like geocities? Check out this awesome project im helping work on!</p>
-      <!---- Accent card keeps having problems with resizing. Keeps overflowing outside of page element. Had to set specific limit on size.
-      Most likely could be either issue with element or how I have used it.  -->
       <style>
-        #jail {
-          display: block;
-          height: 250px;
-          width: 600px;
-
-        }
-        @media screen and (max-width: 600px) {
-          #jail {
-            height: 250px;
-            width: 600px;
+        accent-card {
+            max-height: 480px ;
           }
-        }
+        
       </style>
-      <div id="jail">
-      
-      <accent-card accent-background="" horizontal="" accent-color="red" link="https://hax.psu.edu/" image-width="" image-src="https://avatars.githubusercontent.com/u/170651362?s=280&v=4" ready="" element-visible="">
+      <!---- Accent card keeps being a big issue. The way it sizes creates overlaps. Parts of it are set to absolute and thus it creates problems with banner -->
+      <accent-card accent-background=""  imageValign="top" flat=TRUE horizontal=TRUE accent-color="red" link="https://hax.psu.edu/" image-width="">
         <h5 slot="heading">HaxTheWeb</h5>
         <div slot="content">A pretty cool project</div>
         <div slot="footer">Read More...</div>
       </accent-card>
-      </div>
     </portfolio-screen>
-    <portfolio-screen title="Scouts BSA" pagenumber="5" data-accent="10" data-primary="25">
-      <h3> As a Eagle Scout I highly recommend checking out our program at:</h3>
-      <a href="https://www.scouting.org/programs/scouts-bsa/">https://www.scouting.org/programs/scouts-bsa/</a>
-      </div>
+    <portfolio-screen title="Projects" pagenumber="5" data-accent="10" data-primary="25">
+      <!-- Keep having issues with accent-card and images. Both with overlap on other screens and whatever position its set to it shouldnt be.-->
+      <accent-card accent-background="" horizontal=TRUE >
+        <h5 slot="heading">Project1</h5>
+        <div slot="content">A pretty cool project</div>
+        <div slot="footer">...</div>
+      </accent-card>
     </portfolio-screen>
     <portfolio-screen title="Contact" pagenumber="6">
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeuuJopXBH59jHmNosLdz5WPJpbm6W7WsGUgJNfwbCWUk5LPg/viewform?embedded=true" width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>

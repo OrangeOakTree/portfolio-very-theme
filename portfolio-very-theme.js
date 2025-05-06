@@ -41,17 +41,23 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         display: block;
         height: 100vh;
       }
-      portfolio-banner{
-        
-      }
       #bannertitle {
         display: flex;
         margin-top: auto;
         margin-bottom: auto;
         margin-left: 28px;
         padding: 4px;
-
+        font-size: 24px;
+        background-color: var(--ddd-theme-default-black);
+        background-image: url(
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Cape_may.jpg/500px-Cape_may.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
       }
+      
       
       .navcontent {
         display: flex;
@@ -63,6 +69,25 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         align-items: right;
         a {
           color: var(--ddd-theme-default-white);
+        }
+        @media screen and (min-width: 600px) {
+          #bannertitle {
+            font-size: 36px;
+          }
+          .navcontent {
+            margin-left: 16px;
+            font-size: 16px;
+          }
+
+        }
+        @media screen and (min-width: 928px) {
+          #bannertitle {
+            font-size: 48px;
+          }
+          .navcontent {
+            margin-left: 16px;
+            font-size: 16px;
+          }
         }
       }
       

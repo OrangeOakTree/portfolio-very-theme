@@ -4,7 +4,6 @@
  */
 import { LitElement, html, css } from "lit";
 import {DDD} from "@haxtheweb/d-d-d/d-d-d.js";
-import '@haxtheweb/scroll-button/scroll-button.js';
 /**
  * `portfolio-screen`
  * 
@@ -21,7 +20,7 @@ export class PortfolioScreen extends DDD  {
     super();
     this.title = "NO TITLE";
     this.pagenumber=null;
-    this.backimg = null;
+    this.backimg = "";
     
   }
 
