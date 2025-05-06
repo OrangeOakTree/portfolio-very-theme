@@ -28,9 +28,15 @@
         "test:watch": "web-test-runner test/**/*.test.js --node-resolve --watch"
     },
     "dependencies": {
+        "@haxtheweb/accent-card": "^10.0.2",
+        "@haxtheweb/code-sample": "^10.0.2",
         "@haxtheweb/d-d-d": "^10.0.2",
+        "@haxtheweb/hal-9000": "^10.0.2",
         "@haxtheweb/i18n-manager": "^10.0.2",
+        "@haxtheweb/merit-badge": "^10.0.2",
+        "@haxtheweb/retro-card": "^10.0.2",
         "@haxtheweb/scroll-button": "^10.0.2",
+        "@haxtheweb/wikipedia-query": "^10.0.2",
         "lit": "^3.2.1"
     },
     "devDependencies": {

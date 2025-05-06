@@ -36,12 +36,21 @@ export class PortfolioBanner extends DDD  {
             height: 100px;
             position: fixed;
             width: 100%;
-            margin: 0;
       }
       #wrapper {
-        background-color: white;  
+        background-color: var(--ddd-theme-default-coalyGray); 
+        height: 100%;
+        width: 100%;
         display: flex;
+        text-align: center;
         margin: auto;
+        position: absolute;
+        font-size: 4px;
+      }
+      @media (max-width: 600px) {
+        #wrapper {
+          font-size: 12px;
+        }
       }
     `];
   }

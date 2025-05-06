@@ -1,17 +1,73 @@
 <!doctype html>
 <html lang="en">
-<body>
-  <portfolio-very-theme> 
-    <portfolio-screen title="Screen Main" pagenumber="1">
-      <h1>portfolio-very-theme</h1>
-      <p>Demonstration for portfolio-very-theme</p>
+  <body>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  <portfolio-very-theme bannertitle="Andrew's Portfolio">
+    <portfolio-screen title="About Me" pagenumber="1" data-accent="2" data-primary="2">
+      <img id="headshot" src="assets\IST_2393.jpg"></img>
+      <style>
+        #headshot {
+          width: 192px;
+          height: 192px;
+          border-radius: 50%;
+        }
+      </style>
+      <p>Hello there! I am Andrew! I would say a bunch of stuff here but honestly im to lazy to put stuff here. So im just writing this sentence to give this some text. I hope your having fun reading this.</p>
+    </img>
     </portfolio-screen>
-    <portfolio-screen title="Portfolio Screen" pagenumber="2" >
-      <h1>portfolio-very-theme</h1>
-      <p>Demonstration for portfolio-very-theme</p>
+    <portfolio-screen title="FAQ" pagenumber="2">
+      <h3>Certifications?</h3>
+      <p>I am currently working on getting a Security+ Certification.</p>
+      <h3>Any awards?</h3>
+      <p>Yes! I am an Eagle Scout, and Penn State President Walker Award Recipient!</p>
+    </portfolio-screen>
+    <portfolio-screen title="Penn State IST" pagenumber="3" data-accent="8" data-primary="12">
+      <h3> As a Penn State IST Student I highly recommend checking out our NSA certified programs at:</h3>
+      <a href="https://ist.psu.edu/">https://ist.psu.edu/</a>
+    </portfolio-screen>
+    <portfolio-screen title="HaxTheWeb" pagenumber="4" data-accent="20" data-primary="26">
+      <p> You like geocities? Check out this awesome project im helping work on!</p>
+      <!---- Accent card keeps having problems with resizing. Keeps overflowing outside of page element. Had to set specific limit on size.
+      Most likely could be either issue with element or how I have used it.  -->
+      <style>
+        #jail {
+          display: block;
+          height: 250px;
+          width: 600px;
+
+        }
+        @media screen and (max-width: 600px) {
+          #jail {
+            height: 250px;
+            width: 600px;
+          }
+        }
+      </style>
+      <div id="jail">
+      
+      <accent-card accent-background="" horizontal="" accent-color="red" link="https://hax.psu.edu/" image-width="" image-src="https://avatars.githubusercontent.com/u/170651362?s=280&v=4" ready="" element-visible="">
+        <h5 slot="heading">HaxTheWeb</h5>
+        <div slot="content">A pretty cool project</div>
+        <div slot="footer">Read More...</div>
+      </accent-card>
+      </div>
+    </portfolio-screen>
+    <portfolio-screen title="Scouts BSA" pagenumber="5" data-accent="1" data-primary="2">
+      <h3> As a Eagle Scout I highly recommend checking out our program at:</h3>
+      <a href="https://www.scouting.org/programs/scouts-bsa/">https://www.scouting.org/programs/scouts-bsa/</a>
+      </div>
+    </portfolio-screen>
+    <portfolio-screen title="Contact" pagenumber="6">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeuuJopXBH59jHmNosLdz5WPJpbm6W7WsGUgJNfwbCWUk5LPg/viewform?embedded=true" width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </portfolio-screen>
   </portfolio-very-theme>
   <script type="module" src="./portfolio-very-theme.js"></script>
   <script type="module" src="./portfolio-screen.js"></script> 
-</body>
+  <script type="module" src="node_modules\@haxtheweb\retro-card\retro-card.js"></script>
+  <script type="module" src="node_modules\@haxtheweb\accent-card\accent-card.js"></script>
+  </body>
 </html>

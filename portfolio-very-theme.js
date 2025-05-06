@@ -21,13 +21,15 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
   constructor() {
     super();
     this.pages = [];
+    this.bannertitle = "Page Title";
   }
 
   // Lit reactive properties
   static get properties() {
     return {
       ...super.properties,
-      pages: { type: Array }
+      pages: { type: Array },
+      bannertitle: { type: String }
     };
   }
 
@@ -39,9 +41,38 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         display: block;
         height: 100vh;
       }
-      portfolio-banner {
+      portfolio-banner{
         
       }
+      #bannertitle {
+        display: flex;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 28px;
+        padding: 4px;
+
+      }
+      
+      .navcontent {
+        display: flex;
+        padding: 4px;
+        margin: auto;
+        margin-left: 28px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: right;
+        a {
+          color: var(--ddd-theme-default-white);
+        }
+      }
+      
+      scroll-button {
+        position: fixed;
+        bottom: var(--ddd-spacing-5);
+        right: var(--ddd-spacing-5);
+      
+      }
+      
     `];
   }
   
@@ -51,12 +82,14 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     return html`
     <div class="wrapper">
       <portfolio-banner>
-      <ul>
-        ${this.pages.map((page, index) => html`<a href="#${page.number}" @click="${this.linkChange}" data-index="${index}">${page.title}</a>`)}
+        <h1 id="bannertitle">${this.bannertitle}</h1>
+      <ul class="navcontent">
+        ${this.pages.map((page, index) => html`<a href="#${page.number}" @click="${this.linkchange}" data-index="${index}">${page.title}</a>`)}
       </ul>
       </portfolio-banner>
       <div class="pagewrapper" @page-added="${this.addpage}">
         <slot></slot>
+        <scroll-button></scroll-button>
       </div>
     </div>`;
   }
